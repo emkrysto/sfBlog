@@ -34,3 +34,15 @@
 
 ## install Debug Toolbar
         composer req --dev debug
+
+## install maker bundle to easier generate code
+        composer req --dev maker 
+
+## Install Doctrine ORM for database data storage
+        composer req orm
+
+## configure the Database Connection in .env, for example:
+        DATABASE_URL=mysql://root:@127.0.0.1:3306/sf_blog?serverVersion=mariadb-10.4.11
+	
+## create the sfBlog database
+        php bin/console doctrine:database:create

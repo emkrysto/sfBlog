@@ -143,3 +143,40 @@
 
 ## create the database tables
         php bin/console doctrine:schema:update --force
+
+## after login you should see Admin Panel
+        https://127.0.0.1:8000/admin
+
+## generate new HomeController
+        php bin/console make:controller Home
+	
+## change inside HomeController.php route from "/home" to "/"
+
+## add to HomeController.php:
+        use App\Entity\BlogPost;
+
+## change index() method in HomeController.php
+        public function index(): Response
+        {
+            $title = "Blog posts";        
+            $posts = $this->getDoctrine()
+                    ->getRepository(BlogPost::class)
+                    ->findAll();
+            return $this->render('/home/index.html.twig',['title'=>$title,'posts'=>$posts]);
+        }
+
+## add the script into "example-wrapper" container (home/index.html.twig)
+        <h1>This is the {{ title }} list</h1>
+     
+        <ul>
+            {% if posts is empty %}
+                <h2>No posts to display.</h2>
+            {% else %}    
+                {% for post in posts %}
+                   <li>{{ post.getTitle() }}</li>
+               {% endfor %}
+            {% endif %}
+        </ul>
+
+## create first blog post and go to page url
+       https://127.0.0.1:8000/home

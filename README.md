@@ -100,3 +100,46 @@
 
 ## to open in browser
     https://127.0.0.1:8000/login
+
+## install EasyAdmin
+        composer req admin
+
+## generate BlogSpot entity
+        php bin/console make:entity BlogPost
+	
+	Answer the questions:
+            $title 		string	255
+            $published	datetime
+            $content	text
+            $author		string	255
+            $slug		string	255
+
+## after creating entity validate the mappings
+        php bin/console doctrine:schema:validate
+
+## create at least one dashboard
+        php bin/console make:admin:dashboard
+		
+	Answer the questions:
+            class name = DashboardController
+            directory = src/Controller/Admin/
+
+## add a new Dashboard menu item to configureMenuItems method (DashbordController.php)
+        yield MenuItem::linkToCrud('Blog posts', 'fa fa-book', BlogPost::class);
+
+## add to DashbordController.php:
+        use App\Entity\BlogPost;
+
+## add new folder src/Controller/BlogSpot/
+        md src\Controller\BlogPost
+
+## generate CRUD controllers provide operations (create, show, update, delete)
+        php bin/console make:admin:crud
+	
+        Answer the questions:
+            select [1] App\Entity\BlogSpot
+            directory =  src/Controller/Admin/		
+            namespace = App\Controller\Admin
+
+## create the database tables
+        php bin/console doctrine:schema:update --force

@@ -46,3 +46,32 @@
 	
 ## create the sfBlog database
         php bin/console doctrine:database:create
+
+## install complete security component
+        composer req security
+
+## generate Admin entity
+        symfony console make:user Admin
+
+        Answer the questions:
+            store user data in the database [yes]
+            enter a property name (e.g. email, username, uuid) : username
+            hash/check user passwords [yes]
+		
+## add method in src/Entity/Admin.php
+        public function __toString(): string
+        {
+            return $this->username;
+        }
+
+## create the database tables
+        symfony console make:migration
+        symfony console doctrine:migrations:migrate -n
+
+## generate the encoded password
+        symfony console security:encode-password
+
+## insert the user into the database table
+        email = admin
+        roles = ["ROLE_ADMIN"]
+        password  = enter genereted password

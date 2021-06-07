@@ -25,3 +25,12 @@
 
 ## start the server in the background
         symfony server:start -d
+
+## install Profiler Development Tool
+        composer req --dev profiler
+
+## install PHP Logging Tool
+        composer req logger
+
+## install Debug Toolbar
+        composer req --dev debug

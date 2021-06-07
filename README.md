@@ -75,3 +75,28 @@
         email = admin
         roles = ["ROLE_ADMIN"]
         password  = enter genereted password
+
+## install template engine for PHP
+        composer req twig
+		
+## generate a login form authenticator
+        symfony console make:auth
+
+        Answer the questions:
+            select [1] = Login form authenticator
+            class name = AppAuthenticator
+            name for the controller class = SecurityController
+            select [yes] to generate a '/logout' URL
+
+## in onAuthenticationSuccess method (src/security/AppAuthenticator.php)
+        add:
+            return new RedirectResponse($this->urlGenerator->generate('admin'));
+        insted of:
+            throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
+
+## uncomment bellow authorization rule (config/packages/security.yaml)
+	access control:
+            - { path: ^/admin, roles: ROLE_ADMIN }
+
+## to open in browser
+    https://127.0.0.1:8000/login

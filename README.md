@@ -18,7 +18,7 @@
     	symfony console security:encode-password
     and next in a web browser:
     	http://localhost/phpmyadmin
-    	INSERT INTO admin (username, roles, password) VALUES ("admin", '["ROLE_ADMIN"]', "enter_enereted_assword"); 
+    	INSERT INTO admin (username, roles, password) VALUES ("admin", '["ROLE_ADMIN"]', "enter_genereted_password"); 
  
 # Quick Steps to create the project
 

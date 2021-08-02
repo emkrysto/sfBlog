@@ -9,11 +9,16 @@
 	Composer v2.0.13
 	Composer Symfony flex
 
-# How to use it
-    git clone https://github.com/emkrysto/sfBlog.git
-    cd sfBlog
-    composer install
-   
+# How to use it 
+    using command-line interface (CLI):
+    	git clone https://github.com/emkrysto/sfBlog.git
+    	cd sfBlog
+    	composer install
+    	php bin/console doctrine:schema:update --force
+    	symfony console security:encode-password
+    Using a web browser:
+    	http://localhost/phpmyadmin
+    	INSERT INTO admin (username, roles, password) VALUES ("admin", '["ROLE_ADMIN"]', "enter_enereted_assword"); 
  
 # Quick Steps to create the project
 

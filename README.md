@@ -34,11 +34,11 @@
 	    title varchar(255) NOT NULL,
 	    published varchar(255),
 	    author varchar(255),
-            slug varchar(255),
+	    slug varchar(255),
 	    PRIMARY KEY (ID)
 	);
 	
-    	INSERT INTO admin (username, password, roles) VALUES ('admin', 'enter_genereted_password', '["ROLE_ADMIN"]'); 
+	INSERT INTO admin (username, password, roles) VALUES ('admin', 'enter_genereted_password', '["ROLE_ADMIN"]'); 
  
 # Quick Steps to create the project
 

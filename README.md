@@ -1,44 +1,12 @@
 # Symfony Blog
     Create Blog with Admin Panel and Login Form
 
-
 ## Technologies (I've tested it with)
     PHP v7.3.27
     Mysql (MariaDB) v10.4.17
     Symfony v4.4
-	Composer v2.0.13
-	Composer Symfony flex
-
-# How to use it 
-    Use command-line interface (CLI):
-    	git clone https://github.com/emkrysto/sfBlog.git
-    	cd sfBlog
-    	composer install
-    	php bin/console doctrine:schema:update --force
-    	symfony console security:encode-password
-    and next in a web browser:
-    	http://localhost/phpmyadmin
-	
-	CREATE DATABASE sf_blog;
-	
-	CREATE TABLE admin (
-	    ID int NOT NULL,
-	    username varchar(255) NOT NULL,
-	    password varchar(255),
-	    roles varchar(255),
-	    PRIMARY KEY (ID)
-	);
-	
-	CREATE TABLE blog_post (
-	    ID int NOT NULL,
-	    title varchar(255) NOT NULL,
-	    published varchar(255),
-	    author varchar(255),
-	    slug varchar(255),
-	    PRIMARY KEY (ID)
-	);
-	
-	INSERT INTO admin (username, password, roles) VALUES ('admin', 'enter_genereted_password', '["ROLE_ADMIN"]'); 
+    Composer v2.0.13
+    Composer Symfony flex
  
 # Quick Steps to create the project
 

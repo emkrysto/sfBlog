@@ -1,5 +1,5 @@
 # Symfony Blog
-    Create Blog with Admin Panel and Login Form
+    How to create Blog with Admin Panel and Login Form
 
 ## Technologies (I've tested it with)
     PHP v7.3.27
@@ -30,6 +30,9 @@
 
 ## move into your new project directory
         cd sfBlog
+
+## enable TLS (HTTPS)
+	symfony server:ca:install
 
 ## start the server in the background
         symfony server:start -d
@@ -185,6 +188,15 @@
                {% endfor %}
             {% endif %}
         </ul>
+	
+## created a new src/Migrations/Version* class
+	php bin/console make:migration
+	
+## execut the migration
+	php bin/console doctrine:migrations:migrate
 
-## create first blog post and go to page url
+## create first blog post
+       https://127.0.0.1:8000/admin
+       
+## and go to page url to view our Blog
        https://127.0.0.1:8000/home

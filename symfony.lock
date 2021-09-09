@@ -311,6 +311,9 @@
     "symfony/property-access": {
         "version": "v4.4.25"
     },
+    "symfony/property-info": {
+        "version": "v5.3.7"
+    },
     "symfony/proxy-manager-bridge": {
         "version": "v4.4.25"
     },

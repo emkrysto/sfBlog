@@ -7,8 +7,23 @@
     Symfony v4.4
     Composer v2.0.13
     Composer Symfony flex
+    
+## How to use it
+	In a command-line interface (CLI) type below:
+	git clone https://github.com/emkrysto/sfBlog.git
+	cd sfBlog
+	composer update
+	composer install
+	php bin/console doctrine:database:create
+	php bin/console doctrine:migrations:migrate
+	symfony console security:encode-password
+	Type "your password" and copy Value of Encoded password.
+	symfony server:start -d
+	symfony open:local
+	In a web browser open http://localhost/phpmyadmin and execute sql query:
+	INSERT INTO admin (username, password, roles) VALUES ('admin', 'value_of_encoded_password', '["ROLE_ADMIN"]');
  
-# Quick Steps to create the project
+# Tutorial - Quick Steps to create the project
 
 ## install a new Symfony project (LTS - the latest stable version)
         symfony new sfBlog --version=lts
